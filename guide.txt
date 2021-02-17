@@ -1,0 +1,2 @@
+Lancer d'abord server puis log et enfin appclient.
+Les fruit sont Pomme Orange Abricot Fraise
