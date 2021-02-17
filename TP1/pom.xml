@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.leuville.jms</groupId>
+  <artifactId>common</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <!-- PROPRIETES -->
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<java.version>11</java.version>
+		<jms.api.version>1.1-rev-1</jms.api.version>
+  		<activemq.version>5.15.10</activemq.version>
+  		<slf4j.version>1.7.28</slf4j.version>
+  </properties>  
+  
+  <!-- PLUGINS -->
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+			<release>${java.version}</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <!-- DEPENDANCES -->
+  <dependencies>
+  
+	<!-- https://mvnrepository.com/artifact/javax.jms/jms-api -->
+	<dependency>
+	    <groupId>javax.jms</groupId>
+	    <artifactId>jms-api</artifactId>
+	    <version>${jms.api.version}</version>
+	    <scope>compile</scope>
+	</dependency>	
+  	<!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-client -->
+	<dependency>
+    	<groupId>org.apache.activemq</groupId>
+    	<artifactId>activemq-client</artifactId>
+    	<version>${activemq.version}</version>
+    	<scope>runtime</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>${slf4j.version}</version>
+	    <scope>runtime</scope>
+	</dependency>
+	
+  </dependencies>
+
+</project>
